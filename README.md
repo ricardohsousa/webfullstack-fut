@@ -1,16 +1,69 @@
-# React + Vite
+# Projeto 1 - Tabela do Brasileirão (Programação Web Fullstack)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Visão Geral
 
-Currently, two official plugins are available:
+Projeto 1 para a disciplina **ES47B-ES71 - Programação Web Fullstack** da Universidade Tecnológica Federal do Paraná (UTFPR), Campus Cornélio Procópio.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A aplicação consiste em uma tabela de classificação do Campeonato Brasileiro de 2023. 
+O usuário pode selecionar uma rodada e a tabela é calculada para mostrar a classificação do campeonato atualizada.
 
-## React Compiler
+- **Single Page Application (SPA)** 
+- **React.js** 
+- **AJAX**. 
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🔗 Link para o Deploy
 
-## Expanding the ESLint configuration
+Deploy realizado no GitHub Pages:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**[https://ricardohsousa.github.io/webfullstack-fut/](https://ricardohsousa.github.io/webfullstack-fut/)**
+
+## 🛠️ Tecnologias e Ferramentas
+
+* **React.js**: Biblioteca principal para a construção da interface de usuário.
+* **Vite**: Ferramenta de build utilizada para a criação e desenvolvimento do projeto.
+* **Material-UI (MUI)**: Biblioteca de componentes para a estilização da interface (Tabelas, Menus, Alertas, etc.).
+* **API**: `api-football.com` para obtenção dos dados de partidas e rodadas (Versão Free).
+* **Git & GitHub**: Para controle de versão e hospedagem do código-fonte.
+* **GitHub Pages**: Plataforma de deploy da aplicação.
+
+## ✅ Atendimento aos Requisitos do Projeto
+
+**Busca com Parâmetros para API**
+
+As chamadas para a API `api-football.com` utilizam parâmetros como `league=71` e `season=2023` para buscar os dados corretos. Com o usuário selecionando uma rodada do campeonato.
+
+## 🚀 Como Executar o Projeto Localmente
+
+Para executar o projeto em sua máquina, siga os passos abaixo:
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/ricardohsousa/webfullstack-fut.git
+    ```
+
+2.  **Navegue até a pasta do projeto:**
+    ```bash
+    cd webfullstack-fut/
+    ```
+
+3.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+
+4.  **Configure as Variáveis de Ambiente:**
+    * Crie um arquivo chamado `.env` na raiz do projeto.
+    * Adicione sua chave da API-Football neste arquivo:
+        ```
+        VITE_API_FOOTBALL_KEY=sua_chave
+        ```
+
+5.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
+    A aplicação estará disponível em `http://localhost:5173`.
+
+## 🧑‍💻 Autor
+
+* Ricardo Henrique
