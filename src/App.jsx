@@ -1,7 +1,11 @@
+import TabelaCampeonato from './components/TabelaCampeonato.jsx';
+
 function App() {
-  return (<div>
-      <h1> Projeto FullStack</h1>
-  </div>)
+  return (
+    <div>
+      <TabelaCampeonato />
+    </div>
+  );
 }
 
-export default App
+export default App;
