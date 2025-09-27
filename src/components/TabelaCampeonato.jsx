@@ -1,5 +1,6 @@
 import React, { useEffect, useReducer } from 'react';
 import { CircularProgress, Alert } from '@mui/material';
+import FiltroRodadas from './FiltroRodadas.jsx';
 
 const initialState = {
   loading: true,
@@ -19,10 +20,12 @@ function reducer(state, action) {
         loading: false,
         rodadasDisponiveis: rodadas,
         partidas: partidas,
-        rodadaSelecionada: rodadas.length || '' 
+        rodadaSelecionada: rodadas[0] || '' 
       };
     case 'ERRO':
       return { ...state, loading: false, error: 'Falha ao buscar dados da API.' };
+    case 'ESCOLHA_RODADA':
+      return { ...state, rodadaSelecionada: action.payload };
     default:
       return state;
   }
@@ -76,7 +79,13 @@ function TabelaCampeonato() {
   return (
     <div>
       <h2>Tabela Brasileirão 2023</h2>
-      <p>Rodada selecionada: {state.rodadaSelecionada}</p>
+
+      <FiltroRodadas
+        rodadasDisponiveis={state.rodadasDisponiveis}
+        rodadaSelecionada={state.rodadaSelecionada}
+        onRodadaChange={(e) => dispatch({ type: 'ESCOLHA_RODADA', payload: e.target.value })}
+      />
+      <p>Rodada selecionada: {state.rodadaSelecionada.replace('Regular Season -', 'Rodada')}</p>
     </div>
   );  
 }
